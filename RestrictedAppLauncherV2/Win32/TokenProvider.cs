@@ -34,14 +34,14 @@ namespace RestrictedAppLauncherV2.Win32
 
         public TokenProvider RestrictToken()
         {
-            var restrictedSids = TokenPrinter.GetProcessTokenSidStrings(Token.DangerousGetHandle()).ToList();
+            var processTokenSidStrings = TokenPrinter.GetProcessTokenSidStrings(Token.DangerousGetHandle()).ToList();
 
-            var restrictedSidsAllocationSize = Marshal.SizeOf<SID_AND_ATTRIBUTES>() * restrictedSids.Count;
+            var restrictedSidsAllocationSize = Marshal.SizeOf<SID_AND_ATTRIBUTES>() * processTokenSidStrings.Count;
             IntPtr restrictedSidsPtr = Marshal.AllocHGlobal(restrictedSidsAllocationSize);
 
-            for (int i = 0; i < restrictedSids.Count; i++)
+            for (int i = 0; i < processTokenSidStrings.Count; i++)
             {
-                var restrictedSidString = restrictedSids[i];
+                var restrictedSidString = processTokenSidStrings[i];
                 IntPtr newPtr = restrictedSidsPtr + i * Marshal.SizeOf<SID_AND_ATTRIBUTES>();
 
                 ConvertStringSidToSid(restrictedSidString, out var restrictedSidPtr);
@@ -58,11 +58,10 @@ namespace RestrictedAppLauncherV2.Win32
             if (!CreateRestrictedToken(
                     Token,
                     0,
-                    //(uint)diabledSidStrings.Count, disabledSidsPtr,
                     0, IntPtr.Zero,
                     0, IntPtr.Zero,
-                    (uint)restrictedSids.Count, restrictedSidsPtr,
-                    //0, IntPtr.Zero,
+                    (uint)processTokenSidStrings.Count, restrictedSidsPtr,
+                    //0, IntPtr.Zero, //< ------------Uncomment this and comment out the line above and it works...
                     out SafeTokenHandle restrictedToken) && !false)
                 throw new Win32Exception();
 
@@ -75,6 +74,7 @@ namespace RestrictedAppLauncherV2.Win32
 
         public void Dispose()
         {
+            Token.Dispose();
         }
     }
 }
