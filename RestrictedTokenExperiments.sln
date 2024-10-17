@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsAuthWebApi", "Window
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebViewApp", "WebViewApp\WebViewApp.csproj", "{334BC51C-CBFF-4AB2-9C7A-C0768532D4C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyAppToLaunch", "EmptyAppToLaunch\EmptyAppToLaunch.csproj", "{4D50A834-2505-40B9-A45A-B8608B26EB50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{334BC51C-CBFF-4AB2-9C7A-C0768532D4C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{334BC51C-CBFF-4AB2-9C7A-C0768532D4C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{334BC51C-CBFF-4AB2-9C7A-C0768532D4C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D50A834-2505-40B9-A45A-B8608B26EB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D50A834-2505-40B9-A45A-B8608B26EB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D50A834-2505-40B9-A45A-B8608B26EB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D50A834-2505-40B9-A45A-B8608B26EB50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
