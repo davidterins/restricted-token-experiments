@@ -2,7 +2,9 @@
 using RestrictedAppLauncherV2.AppContainer;
 using RestrictedAppLauncherV2.Win32;
 
-AppContainerLaunch.LaunchProcessInAppContainer("MyTestAppContainer1", @"C:\Windows\System32\notepad.exe");
+AppContainerLaunch.LaunchProcessInAppContainerV3("MyTestAppContainer2", @"C:\Windows\System32\notepad.exe");
+
+
 
 //using var tokenProvider = TokenProvider
 //    .OpenCurrentProcessToken()

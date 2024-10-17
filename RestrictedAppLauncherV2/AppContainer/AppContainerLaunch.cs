@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Security.Principal;
+﻿using System.Runtime.InteropServices;
 
 namespace RestrictedAppLauncherV2.AppContainer
 {
@@ -63,6 +54,20 @@ namespace RestrictedAppLauncherV2.AppContainer
         // Constants for process creation
         const uint CREATE_NO_WINDOW = 0x08000000;
         const uint CREATE_NEW_CONSOLE = 0x00000010;
+
+        public static void LaunchProcessInAppContainerV3(string containerName, string applicationPath)
+        {
+            string appContainerSid = CreateProfile.GetOrCreateAppContainerProfileSid(containerName);
+
+            AppContainerProcessLauncher.LaunchProcessInAppContainer(appContainerSid, applicationPath);
+        }
+
+        public static void LaunchProcessInAppContainerV2(string containerName, string applicationPath)
+        {
+            string appContainerSid = CreateProfile.GetOrCreateAppContainerProfileSid(containerName);
+
+            _ = AppContainerStart.StartProcessInAppContainer(appContainerSid, applicationPath);
+        }
 
         public static void LaunchProcessInAppContainer(string containerName, string applicationPath)
         {
