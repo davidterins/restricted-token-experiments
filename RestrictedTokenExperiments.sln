@@ -6,13 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppToLaunch", "AppToLaunch\AppToLaunch.csproj", "{0F171CED-E014-4FA5-B249-FAD0CFA063FD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestrictedAppLauncherV2", "RestrictedAppLauncherV2\RestrictedAppLauncherV2.csproj", "{C7E84666-85A3-4D33-A4DB-D05D6028C44A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{334BC51C-CBFF-4AB2-9C7A-C0768532D4C7} = {334BC51C-CBFF-4AB2-9C7A-C0768532D4C7}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsAuthWebApi", "WindowsAuthWebApi\WindowsAuthWebApi.csproj", "{F7DD32B6-7282-46A9-B703-A406AE5AE433}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebViewApp", "WebViewApp\WebViewApp.csproj", "{334BC51C-CBFF-4AB2-9C7A-C0768532D4C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebViewApp", "WebViewApp\WebViewApp.csproj", "{334BC51C-CBFF-4AB2-9C7A-C0768532D4C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
